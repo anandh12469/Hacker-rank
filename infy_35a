@@ -1,0 +1,28 @@
+Write a python function which accepts any roman number in the range of 1 to 4999 (both inclusive) and returns the equivalent number of it.
+
+
+e.g.(DCCCXC->890; LXXXVIII->88)
+
+Symbol | Value
+I : 1
+V : 5
+X : 10
+L : 50
+C : 100
+D : 500
+M : 1,000
+
+program solution 
+
+class h:
+    def ri(self, s):
+        a = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        b = 0
+        for i in range(len(s)):
+            if i > 0 and a[s[i]] > a[s[i - 1]]:
+                b += a[s[i]] - 2 * a[s[i - 1]]
+            else:
+                b += a[s[i]]
+        return b
+
+print(h().ri(input()))
