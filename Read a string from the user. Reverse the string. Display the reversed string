@@ -1,0 +1,5 @@
+a=input()
+b=list(a)
+c=b[::-1]
+for i in c:
+    print(i,end="")
