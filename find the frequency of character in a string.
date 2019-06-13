@@ -1,0 +1,11 @@
+n=input()
+m=list(n)
+m.sort()
+m.append(0)
+for i in range(0,len(m)):
+    if(i==len(m)-1):
+        break
+    
+    elif(m[i]!=m[i+1]):
+        
+        print(m[i],m.count(m[i]))
