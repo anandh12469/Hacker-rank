@@ -1,0 +1,14 @@
+n=input()
+n=''.join(sorted(n))
+b=0
+l,j=[],{}
+for i in n:
+    b=n.count(i)
+    if(b!=0):
+        l.append(b)
+        j[i]=b
+    n=n.replace(i,"")
+if((l.count(l[0]))==len(j)-1) or ((l.count(l[0]))==len(j)):
+    print("YES")
+else:
+    print("NO")
