@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+int *input = new int[n];
+vector<int> ls; 
+for(int i = 0; i < n; i++) 
+{
+cin>>input[i];
+}
+ls.push_back(input[0]);
+for(int i = 1; i < n; i++) 
+{
+int ubi = (upper_bound(ls.begin(), ls.end(), input[i]) - ls.begin());
+if(ubi == ls.size()) 
+{
+if(input[i] > ls[ls.size()-1]) 
+{
+ls.push_back(input[i]);
+}
+} 
+else 
+{
+if(ubi == 0) {
+ls[ubi] = input[i];
+}
+if(input[i] > ls[ubi-1]) 
+{
+ls[ubi] = input[i];
+}
+}
+}
+cout<<ls.size();
+return 0;
+}
