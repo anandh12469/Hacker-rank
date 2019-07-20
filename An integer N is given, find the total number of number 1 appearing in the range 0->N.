@@ -1,0 +1,8 @@
+def tcs16b(n,l):
+    for i in range(0,n+1):
+        a=str(i)
+        l.append(a.count("1"))
+    return sum(l)
+n=int(input())
+l=[]
+print(tcs16b(n,l))
