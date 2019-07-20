@@ -1,0 +1,18 @@
+def tcs16a(a,n,l,ans): 
+    l.append(-1)
+    for i in range(n): 
+        if a[i] == '(': 
+            l.append(i)
+        else: 
+            l.pop()
+            if len(l)!=0: 
+                r=l[len(l)-1]
+                ans = max(ans,i-r)
+            else: 
+                l.append(i) 
+    return ans 
+a = input()
+n = len(a)
+l = []
+ans = 0
+print(tcs16a(a,n,l,ans))
